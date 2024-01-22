@@ -25,19 +25,19 @@ Bonus:
 
 Let’s create a simple python script that draw a rotating donut in the terminal using numpy.
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled.png)
 
 Then, we create a requirements.txt file to indicate dependencies.
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%201.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%201.png)
 
 As I’ve created a python virtual environment for this script, i created a .dockerignore file to indicates that the `env` directory should be ignored.
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%202.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%202.png)
 
 Then, let’s create the Dockerfile.
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%203.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%203.png)
 
 I used python:3.10.12-alpine because it is the smallest version (to have the smallest container size possible)
 
@@ -47,7 +47,7 @@ We can now build the image with the following command:
 sudo docker build -t louiscockenpot/moving-donut:1.0 .
 ```
 
-![Here is an screen of `docker image ls` , you can see that the size of my image is 147MB](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%204.png)
+![Here is an screen of `docker image ls` , you can see that the size of my image is 147MB](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%204.png)
 
 Here is an screen of `docker image ls` , you can see that the size of my image is 147MB
 
@@ -57,7 +57,7 @@ We can now publish the container.
 sudo docker push louiscockenpot/moving-donut:1.0
 ```
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%205.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%205.png)
 
 Someone can now pull it, then run a container from it.
 
@@ -65,15 +65,15 @@ Someone can now pull it, then run a container from it.
 sudo docker run -it --name donut louiscockenpot/moving-donut:1.0
 ```
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%206.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%206.png)
 
 The donut is moving !
 
 Let’s run haodling (online version) on my Dockerfile:
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%207.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%207.png)
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%208.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%208.png)
 
 We can see that there is no issue.
 
@@ -98,7 +98,7 @@ Now, i can use `docker start -i moving-donut` to start again the container (with
 
 Let’s run a vulnerability analysis (with Scout Analysis on Dockerhub).
 
-![Untitled](TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%209.png)
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%209.png)
 
 Here we have 2 HIGH, 2 MEDIUM and 0 LOW vulnerabilities.
 
