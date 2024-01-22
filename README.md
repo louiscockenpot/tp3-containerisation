@@ -49,9 +49,9 @@ sudo docker build -t louiscockenpot/moving-donut:1.0 .
 
 ![Here is an screen of `docker image ls` , you can see that the size of my image is 147MB](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%204.png)
 
-Here is an screen of `docker image ls` , you can see that the size of my image is 147MB
+Here is a screen of `docker image ls` , you can see that the size of my image is 147MB
 
-We can now publish the container.
+We can now publish the image to docker hub.
 
 ```bash
 sudo docker push louiscockenpot/moving-donut:1.0
@@ -67,11 +67,11 @@ sudo docker run -it --name donut louiscockenpot/moving-donut:1.0
 
 ![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%206.png)
 
+![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%207.png)
+
 The donut is moving !
 
 Let’s run haodling (online version) on my Dockerfile:
-
-![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%207.png)
 
 ![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%208.png)
 
@@ -101,5 +101,3 @@ Let’s run a vulnerability analysis (with Scout Analysis on Dockerhub).
 ![Untitled](assets/TD3%20-%20Containerize%20a%20simple%20application%200e26382e801b457fa6300842157dd773/Untitled%209.png)
 
 Here we have 2 HIGH, 2 MEDIUM and 0 LOW vulnerabilities.
-
-Finally, we can add the code on a github repo.
